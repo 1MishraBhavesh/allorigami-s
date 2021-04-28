@@ -1,0 +1,262 @@
+import---->  taking something from some place
+
+so example we take view, button,text (components) from react-native
+
+Every component name starts with captial letter.
+
+View is a component .
+View is like a container that can be used to contain other components.a
+
+
+so example RedButton and Text component
+
+render is a function
+
+
+it displays the component returned by the return function
+
+render(){
+   return(){
+     //components
+   }
+
+}
+
+render function can only return one component.
+  Example:  here component returned is View
+render(){
+return (
+      <View style={{marginTop: 100}}>
+        <RedButton />
+        <Text>My First React Component</Text>
+      </View>
+    );
+
+}
+
+
+Another Example:  It returns two component so wrong use of render
+render(){
+  return (
+        <View style={{marginTop: 100}}></View>
+        <RedButton />
+         <Text>My First React Component</Text>
+      );
+
+}
+
+How do we return more than one
+component in React native?
+
+We return more than one
+component in react native
+by nesting them inside a
+View Component.
+Example:->
+render(){
+return (
+
+      <View style={{marginTop: 100}}>
+        <RedButton />
+        <Text>My First React Component</Text>
+      </View>
+    );
+
+}
+render(){
+return (
+  <View>
+      <View style={{marginTop: 100}}>
+        <RedButton />
+        <Text>My First React Component</Text>
+      </View>
+       <View style={{marginTop: 100}}>
+        <RedButton />
+        <Text>My Second React Component</Text>
+      </View>
+  </View>
+    );
+
+}
+
+
+
+the property/prop like color and title for Component Button are called props for Component Button in React -Native.
+Example:
+
+
+  <Button color="red" title="Click Me"/>
+
+
+
+  How many ways we can write a function?
+
+
+  displayAlert(){
+      //code
+    }
+
+
+
+    displayAlert=function(){
+       //code
+    }
+
+
+Arrow function
+    displayAlert=()=>
+      //code
+    
+    displayAlert=()=>
+      alert();
+      alert();
+
+      wwrong use
+displayAlert=()=>
+      alert();
+     correct 
+
+     if (1){
+       index=0;
+     }
+     
+     if (1)
+       index=0;----------------->yes
+     
+
+     
+     if (1){
+       index=0;
+       y=10;
+     }-------------------->yes
+
+      
+     if (1)
+       index=0;
+       y=10;--------------->Wrong
+     
+       
+     if (1)
+       index=0;
+
+    y=10;
+   class 56--------------->
+
+   <View prop1='' ,prop2={{}}>
+
+   prop------>style
+
+   <View style={{}}>
+
+
+
+I will show you how to do it:
+
+
+1. First, we import the
+‘StyleSheet’ component
+defined in react native.
+
+import * as React from 'react';
+import { Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
+import {Audio} from 'expo-av';
+
+
+merge two lines:
+import { Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+as :
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+
+2. Second, we use
+‘StyleSheet.create()’ to create
+the different styles. The
+function expects a JSON
+object with different styles
+defined on them.
+Note: We use "const" to create
+a variable which we do not
+want to change while the
+program is running. Typically
+we do not want the style object
+to change during the program.
+
+const styles=StyleSheet.create(
+  { 
+            button:{
+              marginTop: 200,
+              marginLeft: 100,
+              borderWidth: 1,
+              borderColor: 'rgba(0,0,0,0.2)',
+              alignItems: 'center',
+
+          }
+          buttonText: {
+              fontWeight: 'bold',
+              fontSize: 20,
+            }
+
+
+}
+
+);
+
+
+
+
+3. We can call the styles.<name
+of the style> inside the style
+prop of a component to give a
+particular style to the react
+native component.
+
+
+
+Example:
+
+
+<TouchableOpacity style={{}}>
+</TouchableOpacity>
+
+
+
+
+
+Total Example:
+
+  render() {
+    return (
+      <TouchableOpacity
+        style={styles.button}
+        onPress={this.playSound}>
+        <Text
+          style={styles.buttonText}>
+          Press Me
+        </Text>
+      </TouchableOpacity>
+    );
+  }
+}
+const styles = StyleSheet.create({
+  button: {
+    marginTop: 200,
+    marginLeft: 100,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.2)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 200,
+    height: 200,
+    backgroundColor: 'red',
+    borderRadius: 100,
+  },
+  buttonText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+  }
+});
+
+     
+
